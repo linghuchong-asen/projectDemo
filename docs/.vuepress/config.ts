@@ -13,6 +13,9 @@ export default defineUserConfig({
 
   shouldPrefetch: false,
 
+  /* 配置打包输出文件位置，相对于根目录 */
+  dest: "dist", // 举例：这里输出至根目录下的dist文件夹下
+
   plugins: [
     searchProPlugin({
       // 索引全部内容

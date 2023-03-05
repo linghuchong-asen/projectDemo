@@ -3,14 +3,14 @@
  * @Author: yangsen
  * @Date: 2022-12-29 17:43:41
  * @LastEditors: yangsen
- * @LastEditTime: 2023-01-03 09:28:37
+ * @LastEditTime: 2023-03-05 17:30:03
  */
 import { hopeTheme } from "vuepress-theme-hope";
 import { navbar_hope } from "./navbar";
 import { sidebar_hope } from "./sidebar";
 
 export default hopeTheme({
-  hostname: "threeForGisDocs",
+  hostname: "projectDemo",
 
   author: {
     name: "杨森",
