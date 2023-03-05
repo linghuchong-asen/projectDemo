@@ -4,7 +4,7 @@ import theme from "./config/theme.js";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default defineUserConfig({
-  base: "/",
+  base: "/projectDemo/",
 
   lang: "zh-CN",
   title: "API文档--three.js封装",
