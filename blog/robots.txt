@@ -1,5 +1,0 @@
-
-User-agent:*
-Disallow:
-
-Sitemap: https://projectDemo/projectDemo/sitemap.xml
