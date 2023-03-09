@@ -1,70 +1,39 @@
 # 墙(WallGeometry)
 
-一种对墙的描述，类似于KML行字符串。墙是由一系列的点构成的，这些点向下延伸到地面。可选地，它们可以向下挤压到指定的高度。
+墙几何体部分。
 
 ## 构造器
 
-**WallGeometry(options)**
+**WallGeometry(positionArr)**
 
-options对象，具有以下属性：
-
-| Name             | Type                                                         | Default                         | Description                                                  |
-| :--------------- | :----------------------------------------------------------- | :------------------------------ | :----------------------------------------------------------- |
-| `positions`      | Vector3[ ]                                                   |                                 | 笛卡尔对象数组，它们是墙的点。                               |
-| `granularity`    | Number                                                       | `CesiumMath.RADIANS_PER_DEGREE` | `optional`每个经度和纬度之间的距离，以弧度表示。确定缓冲区中的位置数。 |
-| `maximumHeights` | number[ ]                                                    |                                 | `optional`与`positions`并行的数组，给出了在`positions`处墙的最大高度。如果未定义，则使用每个位置的高度。 |
-| `minimumHeights` | number[ ]                                                    |                                 | `optional`与`positions`并行的数组，给出了在`positions`处墙的最小高度。如果未定义，则每个位置的高度为0.0。 |
-| `ellipsoid`      | [Ellipsoid](https://www.vvpstk.com/public/Cesium/Documentation/Ellipsoid.html) | `Ellipsoid.WGS84`               | `optional`用于坐标操作的椭球体                               |
-| `vertexFormat`   | [VertexFormat](https://www.vvpstk.com/public/Cesium/Documentation/VertexFormat.html) | `VertexFormat.DEFAULT`          | `optional`要计算的顶点属性。                                 |
+| Name        | Type                                       | Description    |
+| :---------- | :----------------------------------------- | :------------- |
+| positionArr | [&lt;Array&gt;Vector2](../math/Vector2.md) | 多边形的路径点 |
 
 ## 示例代码
 
 ```javascript
-// 建一堵从地面到10000米的墙
-var wall = new Webgis.WallGeometry({
-  positions : Webgis.Cartesian3.fromDegreesArrayHeights([
-    19.0, 47.0, 10000.0,
-    19.0, 48.0, 10000.0,
-    20.0, 48.0, 10000.0,
-    20.0, 47.0, 10000.0,
-    19.0, 47.0, 10000.0
-  ])
-});
-var geometry = Webgis.WallGeometry.createGeometry(wall);
+const wallPosition = [new Webgis.Vector2(-7, 1), new Webgis.Vector2(-15, 1), new Webgis.Vector2(-15, 10), new Webgis.Vector2(-7, 10)];
+const wallGeometry = new Webgis.WallGeometry(wallPosition);
 ```
 
 ## 属性
 
+### height: number
+
+获取墙的高度。
+
+### positionArr: [&lt;Array&gt;Vector2](../math/Vector2.md)
+
+获取墙使用的路径点。
+
 ## 方法
 
-`static` **[fromConstantHeights(options): WallGeometry]()**
+### stretch(height)
 
-一种对墙的描述，类似于KML行字符串。墙是由一系列的点构成的，这些点向下延伸到地面。可选地，它们可以向下挤压到指定的高度。
+| Name   | Type   | Description |
+| :----- | :----- | :---------- |
+| height | number | 拉伸高度。  |
 
-options对象，具有以下属性：
+拉伸多边形。
 
-| Name            | Type                                                         | Default                | Description                                                  |
-| :-------------- | :----------------------------------------------------------- | :--------------------- | :----------------------------------------------------------- |
-| `positions`     | Vector3[ ]                                                   |                        | 笛卡尔对象数组，它们是墙的点。                               |
-| `maximumHeight` | Number                                                       |                        | optional定义在`positions`处的墙的最大高度的常量。如果未定义，则使用每个位置的高度。 |
-| `minimumHeight` | Number                                                       |                        | optional定义在`positions`处的墙的最小高度的常量。如果未定义，则每个位置的高度为0.0。 |
-| `ellipsoid`     | [Ellipsoid](https://www.vvpstk.com/public/Cesium/Documentation/Ellipsoid.html) | `Ellipsoid.WGS84`      | optional用于坐标操作的椭球体                                 |
-| `vertexFormat`  | [VertexFormat](https://www.vvpstk.com/public/Cesium/Documentation/VertexFormat.html) | `VertexFormat.DEFAULT` | optional要计算的顶点属性。                                   |
-
-Example:
-
-```javascript
-// 建造一堵从10000米到20000米的墙
-var wall = Webgis.WallGeometry.fromConstantHeights({
-  positions : Webgis.Cartesian3.fromDegreesArray([
-    19.0, 47.0,
-    19.0, 48.0,
-    20.0, 48.0,
-    20.0, 47.0,
-    19.0, 47.0,
-  ]),
-  minimumHeight : 20000.0,
-  maximumHeight : 10000.0
-});
-var geometry = Webgis.WallGeometry.createGeometry(wall);
-```

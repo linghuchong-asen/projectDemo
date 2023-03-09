@@ -7,7 +7,7 @@ export default defineUserConfig({
   base: "/projectDemo/",
 
   lang: "zh-CN",
-  title: "API文档--three.js封装",
+  title: "项目demo",
 
   head: [["link", { real: "icon", href: "/projectDemo/favicon.ico" }]], // 配置网站图标
 

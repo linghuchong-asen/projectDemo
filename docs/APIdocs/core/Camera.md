@@ -10,45 +10,45 @@
 
 ## 属性
 
-### [DEFAULT_OFFSET]()
+### direction: [Vector3](../math/Vector3.md)
 
-当相机拉近到物体包围球时，默认的heading/pitch/range值。
-
-### [DEFAULT_VIEW_FACTOR]()
-
-该值用来确定相机位置，当值为0是相机观察范围是整个`Camera#DEFAULT_VIEW_RECTANGLE`，大于0时远离`Camera#DEFAULT_VIEW_RECTANGLE`， 小于0时向`Camera#DEFAULT_VIEW_RECTANGLE`拉近。
-
-### [DEFAULT_VIEW_RECTANGLE]()
-
-相机在创建时查看的默认矩形位置。
-
-### [direction ]()
+`readonly`
 
 相机的观察方向。
 
-### [frustum ]()
+### heading: number
 
-视锥(平截头体)。可选值：`PerspectiveFrustum`，`OrthographicFrustum`;默认值`PerspectiveFrustum`
-
-### [heading]()
+`readonly`
 
 获取相机的偏航角，以弧度表示。
 
-### [pitch]()
+### pitch: number
+
+`readonly`
 
 获取相机的俯仰角，以弧度表示。
 
-### [position]()
+### position: [Vector3](../math/Vector3.md)
 
 相机的位置。
 
-### [roll]()
+### roll: number
+
+`readonly`
 
 获取相机的翻滚角，以弧度表示。
 
-### [up ]()
+### up: [Vector3](../math/Vector3.md)
 
 相机向上的方向。
 
 ## 方法
+
+### lookAt(target): void
+
+| Name   | Type                          | Description    |
+| :----- | :---------------------------- | :------------- |
+| target | [Vector3](../math/Vector3.md) | 相机朝向的点。 |
+
+设置相机朝向。
 

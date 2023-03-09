@@ -1,11 +1,11 @@
 ---
 home: true
 heroImage: /logo-removeBg-preview.png
-heroText: Three.js封装 # 主标题
+heroText: 项目demo # 主标题
 heroHeight: 200
-tagline: API文档 # 副标题
+tagline: 文档与案例 # 副标题
 actions:
-  - text: 快速上手 →
+  - text: 开始浏览 →
     link: /APIdocs/
     type: primary
 features: null

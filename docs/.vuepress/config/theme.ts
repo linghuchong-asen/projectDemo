@@ -3,7 +3,7 @@
  * @Author: yangsen
  * @Date: 2022-12-29 17:43:41
  * @LastEditors: yangsen
- * @LastEditTime: 2023-03-05 21:45:00
+ * @LastEditTime: 2023-03-07 14:02:50
  */
 import { hopeTheme } from "vuepress-theme-hope";
 import { navbar_hope } from "./navbar";
@@ -18,7 +18,7 @@ export default hopeTheme({
 
   iconAssets: "iconfont", // 项目中使用的图标设置，不是网站的图标
 
-  logo: "/logo-removeBg-preview.png", // 博客右上角的logo
+  logo: "/logo-removeBg-preview.png", // 博客左上角的logo
 
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
   // 主题颜色
@@ -44,7 +44,7 @@ export default hopeTheme({
   // sidebar
   sidebar: sidebar_hope,
 
-  footer: "引擎版",
+  footer: "项目demo",
 
   displayFooter: true,
 
