@@ -2,6 +2,7 @@ import { defineUserConfig } from "vuepress";
 import theme from "./config/theme.js";
 
 import { searchProPlugin } from "vuepress-plugin-search-pro";
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
 
 export default defineUserConfig({
   base: "/projectDemo/",
@@ -27,6 +28,9 @@ export default defineUserConfig({
           placeholder: "搜索 Ctrl+K",
         },
       },
+    }),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, "./components"),
     }),
   ],
 });
